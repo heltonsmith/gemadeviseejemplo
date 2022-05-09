@@ -4,7 +4,9 @@
 
 <% if user_signed_in? %>
     <p>Usuario: <%= current_user.email %></p>
+    <p>Bienvenido: <%= current_user.nombre %> <%= current_user.apellido %></p>
     <br>
+
 
     <%= link_to "Cerrar Sesion", destroy_user_session_path %>
 
