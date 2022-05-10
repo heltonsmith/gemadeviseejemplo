@@ -19,21 +19,63 @@
   </div>
 
   <div class="field">
+    <%= f.label :genero %><br />
+
+    <%= f.label :m %>
+    <%= f.radio_button :genero, "masculino" %>
+
+    <%= f.label :f %>
+    <%= f.radio_button :genero, "femenino", checked: "checked" %>
+  </div>
+
+  <div class="field">
+    <% 
+    x = {
+          "chile" => "cl", 
+          "argentina" => "ar", 
+          "peru" => "pu",
+          "brasil" => "br",
+          "colombia" => "co",
+          "bolivia" => "bl",
+          "estados unidos" => "us"
+        } 
+    %>
+
+    <%= f.label :pais %><br />
+    <%= f.select :pais, x, selected: "br" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :descripcion %><br />
+    <%= f.text_area :descripcion, autofocus: true, autocomplete: "descripcion" %>
+  </div>
+
+   <div class="field">
+    <%= f.label :color %><br />
+    <%= f.color_field :color %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
+  
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <br>
+
   <div class="actions">
     <%= f.submit "Registrarse" %>
   </div>
 <% end %>
+
+<br>
 
 <%= render "devise/shared/links" %>

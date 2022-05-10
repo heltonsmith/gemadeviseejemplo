@@ -34,6 +34,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       ## Extra
       t.string :nombre
       t.string :apellido
+      t.string :genero
+      t.string :pais
+      t.text :descripcion
+      t.string :color
 
       t.timestamps null: false
     end
