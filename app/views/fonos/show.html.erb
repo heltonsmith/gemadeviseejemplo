@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @fono %>
+
+<div>
+  <%= link_to "Edit this fono", edit_fono_path(@fono) %> |
+  <%= link_to "Back to fonos", fonos_path %>
+
+  <%= button_to "Destroy this fono", @fono, method: :delete %>
+</div>

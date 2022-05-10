@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Fonos</h1>
+
+<div id="fonos">
+  <% @fonos.each do |fono| %>
+    <%= render fono %>
+    <p>
+      <%= link_to "Show this fono", fono %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New fono", new_fono_path %>
