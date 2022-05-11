@@ -5,6 +5,8 @@
 <% if user_signed_in? %>
     <p>Usuario: <%= current_user.email %></p>
     <p>Bienvenido: <%= current_user.nombre %> <%= current_user.apellido %></p>
+    <p>Id: <%= current_user.id %></p>
+    <p><%= link_to image_tag("/img/ojo.png", :alt => "imagen que muestra los fonos", :class => "verfono"), fonos_path %></p>
     <br>
 
 

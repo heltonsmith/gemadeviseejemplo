@@ -4,7 +4,8 @@ class FonosController < ApplicationController
 
   # GET /fonos or /fonos.json
   def index
-    @fonos = Fono.all
+    #@fonos = Fono.all
+    @fonos = User.find(current_user.id).fonos
   end
 
   # GET /fonos/1 or /fonos/1.json

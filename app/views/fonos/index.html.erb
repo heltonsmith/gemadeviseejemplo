@@ -2,13 +2,40 @@
 
 <h1>Fonos</h1>
 
+<% if user_signed_in? %>
+    <p>Usuario: <%= current_user.email %></p>
+    <p>Bienvenido: <%= current_user.nombre %> <%= current_user.apellido %></p>
+    <p>Id: <%= current_user.id %></p>
+    <br>
+
+
+    <%= link_to "Cerrar Sesion", destroy_user_session_path %>
+
+<% else %>
+
+    <p>Debe iniciar sesión</p>
+    <%= link_to "Iniciar sesión", new_user_session_path %>
+
+<% end %>
+
 <div id="fonos">
-  <% @fonos.each do |fono| %>
-    <%= render fono %>
-    <p>
-      <%= link_to "Show this fono", fono %>
-    </p>
-  <% end %>
+  <table border="1px" class="table table-striped">
+    <tr>
+      <th>Usuario</th>
+      <th>Fono</th>
+      <th>Acción</th>
+    </tr>
+    <% @fonos.each do |fono| %>
+      <tr>
+        <td><%= fono.user_id %></td>
+        <td><%= fono.numero %></td>
+        <td>
+          <%= link_to image_tag("/img/ojo.png", :alt => "imagen que muestra los fonos", :class => "verfono"), fono %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
 </div>
 
-<%= link_to "New fono", new_fono_path %>
+<br>
+<%= link_to "Crear Nuevo Fono", new_fono_path %>
