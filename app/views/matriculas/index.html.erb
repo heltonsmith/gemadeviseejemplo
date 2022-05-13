@@ -1,0 +1,24 @@
+
+
+<h1>Matriculas de - <%= current_user.email %></h1>
+
+<hr>
+<h3>Matriculas actuales</h3>
+
+<% @us2.each do |a| %>
+    <%= a.id %> - <%= a.nombre %> <br>   
+<% end %>
+<br>
+
+<%= form_with url: "/matriculas/new", method: :get do |f| %>
+
+    <%= f.hidden_field :user_id, :value => current_user.id %> <br><br>
+
+    <%= f.label :asignatura %> <br>    
+    <%= select( nil, "asig", Asignatura.all.collect{ |a| [a.nombre, a.id] } ) %> <br><br>
+
+    <%= f.submit "Matricularme" %>
+
+<% end %>
+
+

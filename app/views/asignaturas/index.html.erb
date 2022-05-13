@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Asignaturas</h1>
+
+<div id="asignaturas">
+  <table border="1" class="table table-striped">
+    <tr>
+      <th>Nombre</th>
+      <th>Acción</th>
+    </tr>
+    <% @asignaturas.each do |asignatura| %>
+      <tr>
+        <td><%= asignatura.nombre %></td>
+        <td><%= link_to "Ver asignatura", asignatura %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<%= link_to "New asignatura", new_asignatura_path %>

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @asignatura %>
+
+<div>
+  <%= link_to "Edit this asignatura", edit_asignatura_path(@asignatura) %> |
+  <%= link_to "Back to asignaturas", asignaturas_path %>
+
+  <%= button_to "Destroy this asignatura", @asignatura, method: :delete %>
+</div>

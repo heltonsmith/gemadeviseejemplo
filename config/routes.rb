@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :asignaturas
   resources :fonos
   devise_for :users
   get 'home/index'
@@ -8,4 +9,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root to: "home#index"
+
+  get "/matriculas/form", to: "matriculas#index"
+  get "/matriculas/new", to: "matriculas#new"
 end
