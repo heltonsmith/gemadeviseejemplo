@@ -3,10 +3,16 @@
 <h1>Matriculas de - <%= current_user.email %></h1>
 
 <hr>
-<h3>Matriculas actuales</h3>
+
+<% if @us2.count == 0 %>
+    <h3>No hay matriculas aun...</h3>
+<% else %>
+    <h3>Matriculas actuales</h3>
+<% end %>
 
 <% @us2.each do |a| %>
-    <%= a.id %> - <%= a.nombre %> <br>   
+    <%= a.id %> - <%= a.nombre %> <%= link_to "Eliminar matricula", 
+    matriculas_eliminar_path(id: a.id, nom_as: a.nombre, us_id: current_user.id) %> <br>   
 <% end %>
 <br>
 
@@ -21,4 +27,5 @@
 
 <% end %>
 
-
+<br>
+<%= link_to "Volver al home", home_index_path %> <br> 

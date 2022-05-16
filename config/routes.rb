@@ -12,4 +12,5 @@ Rails.application.routes.draw do
 
   get "/matriculas/form", to: "matriculas#index"
   get "/matriculas/new", to: "matriculas#new"
+  get "/matriculas/eliminar", to: "matriculas#eliminar"
 end
