@@ -10,11 +10,20 @@
     <h3>Matriculas actuales</h3>
 <% end %>
 
-<% @us2.each do |a| %>
-    <%= a.id %> - <%= a.nombre %> <%= link_to "Eliminar matricula", 
-    matriculas_eliminar_path(id: a.id, nom_as: a.nombre, us_id: current_user.id) %> <br>   
-<% end %>
-<br>
+<table border="1" class="table table-striped">
+    <tr>
+        <th>Asignatura</th>
+        <th>Eliminar matricula</th>
+    </tr>
+    <% @us2.each do |a| %>
+        <tr>
+            <td><%= a.id %> - <%= a.nombre %></td>
+            <td><%= link_to "Eliminar matricula", 
+        matriculas_eliminar_path(id: a.id, nom_as: a.nombre, us_id: current_user.id) %></td>
+        </tr>
+    <% end %>
+    <br>
+</table>
 
 <%= form_with url: "/matriculas/new", method: :get do |f| %>
 

@@ -6,10 +6,25 @@
     <p>Usuario: <%= current_user.email %></p>
     <p>Bienvenido: <%= current_user.nombre %> <%= current_user.apellido %></p>
     <p>Id: <%= current_user.id %></p>
-    <p><%= link_to image_tag("/img/ojo.png", :alt => "imagen que muestra los fonos", :class => "verfono"), fonos_path %></p>
     <br>
+    <hr>
+  
+    <p><%= link_to image_tag("/img/ojo.png", :alt => "imagen que muestra los fonos", :class => "verfono"), fonos_path %></p>
+    <label for="fonos">Agregar fonos</label>
+    <br>
+    <hr>
 
+ 
     <p><%= link_to image_tag("/img/asignatura.png", :alt => "imagen que matricula", :class => "verfono"), matriculas_form_path %></p>
+    <label for="matricula">Matricular asignatura</label>
+    <br>
+    <hr>
+    
+    <p><%= link_to image_tag("/img/agregara.png", :alt => "agregar asignatura", :class => "verfono"), asignaturas_path %></p>
+    <label for="asignatura">Agregar asignatura</label>
+    <br>
+    <hr>
+
     <br>
 
     <p><%= link_to "Editar datos", edit_user_registration_path %></p>
